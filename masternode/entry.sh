@@ -4,8 +4,8 @@ set -e
 # Add local user
 # Either use the LOCAL_USER_ID if passed in at runtime or
 # fallback
-USER_ID=${LOCAL_USER_ID:-9001}
-GRP_ID=${LOCAL_GRP_ID:-9001}
+USER_ID=${LOCAL_USER_ID:-9002}
+GRP_ID=${LOCAL_GRP_ID:-9002}
 
 getent group user > /dev/null 2>&1 || groupadd -g $GRP_ID user
 id -u user > /dev/null 2>&1 || useradd --shell /bin/bash -u $USER_ID -g $GRP_ID -o -c "" -m user
